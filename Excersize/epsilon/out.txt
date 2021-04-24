@@ -1,0 +1,14 @@
+Maximum integer = 2147483647
+Max integer: 2147483647
+Max integer: 2147483647
+Min integer = -2147483648
+Min integer: -2147483648
+Min integer: 2147483646
+min abs double: 2.22045e-16
+Min abs float: 2.38419e-07
+Min abs long double : 5.43472e-323
+sum up: 15.403683
+sum down: 18.807919
+sum up: inf
+sum down: 21.3716
+are they equal: 1

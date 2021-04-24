@@ -1,0 +1,102 @@
+Starting with the 2 dimensional identity function:
+Start point:
+    9.9898
+  0.879925
+
+gives func value:
+    9.9898
+  0.879925
+
+running algoritm 
+found root::
+-2.19704e-07
+-2.43138e-09
+
+function value of root:
+-2.19704e-07
+-2.43138e-09
+
+used tolerance:   0.000050
+
+
+ now onto the 2 dimensional function:
+ f(x,y)=(f1,f2)    f1=50*sin(x)*cos(y)    f2=50*cos(y)*sin(x)
+Start point:
+ 0.0188427
+  0.386501
+
+gives func value:
+  0.872584
+   0.94191
+
+running algoritm 
+found root:
+9.45924e-16
+  0.385628
+
+function value of root:
+4.38229e-14
+4.72962e-14
+
+used tolerance:   0.000050
+
+
+ now onto the 2 dimensional function:
+ f(x,y)=(f1,f2)    f1=sin(cos(x)+sin(y))    f2=cos(sin(x)+cos(y))
+Start point:
+   7.79919
+   4.29827
+
+gives func value:
+ -0.758306
+  0.827522
+
+running algoritm 
+found root::
+   7.18651
+   5.61568
+
+function value of root:
+-2.88915e-05
+3.80235e-05
+
+used tolerance:   0.000050
+
+
+ now onto the gradient of the Rosenbrock's valley function
+Start point:
+   1.00097
+   1.00029
+
+gives func value:
+  0.658765
+ -0.328099
+
+running algoritm 
+found root::
+         1
+         1
+
+function value of root:
+1.69864e-12
+-3.55271e-13
+
+used tolerance:   0.000005
+
+
+ now onto the groundstate of hydrogen:
+Start point:
+      -0.6
+
+gives func value:
+    231.67
+
+running algoritm 
+found root::
+  -0.50077
+
+The analytical result is -0.5
+function value of root:
+3.92558e-08
+
+used tolerance:   0.000100

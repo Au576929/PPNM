@@ -1,0 +1,38 @@
+Main: checking func1: 2.718282
+integral of exp(-x) from 0 to 5, with 10000 points:Main: plainmc not called. res=0.000000
+Main: plainmc called. 
+ res=0.997306
+err=0.012314
+actual result: 0.99326
+integral of cos(x)*cos(y) from 0 to 3.14159265 in both x and y, with 25000 points:Main: plainmc called. 
+ res=-0.025983
+err=0.031346
+actual result: 0
+integral of 1/(1-cos(x)*cos(y)*cos(z)) from 0 to 3.14159265 in both x, y and z, with 100000 points:Main: plainmc called. 
+ res=1.421107
+err=0.035816
+actual result: 1.39320392968
+Corput algorithm implemented.
+test of corput algorithm:
+ base is: 10
+n=1  corput returns: 0.100000
+n=2  corput returns: 0.200000
+n=3  corput returns: 0.300000
+n=4  corput returns: 0.400000
+n=5  corput returns: 0.500000
+n=6  corput returns: 0.600000
+n=7  corput returns: 0.700000
+n=8  corput returns: 0.800000
+n=9  corput returns: 0.900000
+n=10  corput returns: 0.010000
+Testing quasi integration on integral of cos(x)*cos(y) from 0 to 3.14159265 in both x and y, with 25000 points:Quasimc called. 
+ res=0.001032
+err=0.000741
+actual result: 0
+Testing stratified mc algorithm:
+Quasimc called. 
+ res=0.080106
+actual result: 0
+accuracy 0.005000
+ eps 0.000000
+
