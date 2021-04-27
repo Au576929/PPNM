@@ -224,12 +224,11 @@ while (x<b){ /*if b<a in your is of interest, it is simple to change x->-x in di
         if (err<tol){
                 x+=h;
                 y=yh;
-        	fprintf(list_stream,"%10f ",x);
-                for (int i=0;i<n;i++){
-                        fprintf(list_stream,"%10f ",yh[i]);
+		fprintf(list_stream,"%10f ",x);
+		for (int i=0; i<n;i++){
+			fprintf(list_stream,"%10f ",y[i]);
 		}
-                fprintf(list_stream,"\n");
-
+		fprintf(list_stream,"\n");
 	} 
         h*=pow(tol/err,0.25)*0.95;
  

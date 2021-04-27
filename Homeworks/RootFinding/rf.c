@@ -171,19 +171,12 @@ void g(int n, double x, double* y, double* dydx, double E){
 }
 
 
-void func5(gsl_vector* x,gsl_vector* fx){
-	char pre_name[20]="out.Psi.txt";
-	char name[80];
-	int count=0; 
-	if(access(name,F_OK)==0){
-		count++;
-		sprintf(name,"%s%i",pre_name,count);
-	}else{
-		count=1;
-		sprintf(name,"%s%i",pre_name,count);
-	}
+
+void func8newton(gsl_vector* x,gsl_vector* fx){
+	char name[80]="out.Psitest.txt";
+
 	double E=gsl_vector_get(x,0);
-	int n=2;
+	int n=2; 
 	double a=1.0/1000;
 	double yA[n];
 	yA[0]=a-a*a;
@@ -198,6 +191,28 @@ void func5(gsl_vector* x,gsl_vector* fx){
 	gsl_vector_set(fx,0,gsl_vector_get(res,0));
 	gsl_vector_free(res);
 }
+void func8print(gsl_vector* x,gsl_vector* fx){
+
+        char name[80]="out.Psi8.txt";
+
+        double E=gsl_vector_get(x,0);
+        int n=2;
+        double a=1.0/1000;
+        double yA[n];
+        yA[0]=a-a*a;
+        yA[1]=1-2*a;
+        double* ya=yA;
+        double b=8;
+        double h=0.01;
+        double acc=0.05;
+        double eps=0.05;
+        gsl_vector* res=gsl_vector_alloc(n);
+        driverg(&g,n,a,ya,b,h,acc,eps,name,res,E);
+        gsl_vector_set(fx,0,gsl_vector_get(res,0));
+        gsl_vector_free(res);
+}
+
+
 
 printf("\n\n now onto the groundstate of hydrogen:\n");
 dim=1;
@@ -215,20 +230,316 @@ for (int i=0;i<dim;i++){
 printf("Start point:\n");
 vector_print(E);
 printf("gives func value:\n");
-func5(E,Psib);
+func8newton(E,Psib);
 vector_print(Psib);
 
-eps=0.0001;
+eps=0.01;
 printf("running algoritm \n");
 
-Newton(func5,E,eps);
+Newton(func8newton,E,eps);
 printf("found root::\n");
 vector_print(E);
 printf("The analytical result is -0.5\n");
-func5(E,Psib);
+func8print(E,Psib);
 printf("function value of root:\n");
 vector_print(Psib);
 printf("used tolerance: %10f\n",eps);
+
+printf("Testing for different endvalues for the =0 boundary condition, above the function was set to zero at x=8\n");
+printf("same initial coniditions, tolerance etc. is used:\n");
+printf("f(x)=0 for x=5\n");
+void func5print(gsl_vector* x,gsl_vector* fx){
+
+        char name[80]="out.Psi5.txt";
+
+        double E=gsl_vector_get(x,0);
+        int n=2;
+        double a=1.0/1000;
+        double yA[n];
+        yA[0]=a-a*a;
+        yA[1]=1-2*a;
+        double* ya=yA;
+        double b=5;
+        double h=0.01;
+        double acc=0.05;
+        double eps=0.05;
+        gsl_vector* res=gsl_vector_alloc(n);
+        driverg(&g,n,a,ya,b,h,acc,eps,name,res,E);
+        gsl_vector_set(fx,0,gsl_vector_get(res,0));
+        gsl_vector_free(res);
+}
+
+void func5newton(gsl_vector* x,gsl_vector* fx){
+        char name[80]="out.Psitest.txt";
+
+        double E=gsl_vector_get(x,0);
+        int n=2;
+        double a=1.0/1000;
+        double yA[n];
+        yA[0]=a-a*a;
+        yA[1]=1-2*a;
+        double* ya=yA;
+        double b=5;
+        double h=0.01;
+        double acc=0.05;
+        double eps=0.05;
+        gsl_vector* res=gsl_vector_alloc(n);
+        driverg(&g,n,a,ya,b,h,acc,eps,name,res,E);
+        gsl_vector_set(fx,0,gsl_vector_get(res,0));
+        gsl_vector_free(res);
+}
+
+for (int i=0;i<dim;i++){
+        gsl_vector_set(E,i,-0.6);
+}
+
+
+
+printf("running algoritm \n");
+
+Newton(func5newton,E,eps);
+printf("found root::\n");
+vector_print(E);
+printf("The analytical result is -0.5\n");
+func5print(E,Psib);
+printf("function value of root:\n");
+vector_print(Psib);
+
+
+void func65print(gsl_vector* x,gsl_vector* fx){
+
+        char name[80]="out.Psi65.txt";
+
+        double E=gsl_vector_get(x,0);
+        int n=2;
+        double a=1.0/1000;
+        double yA[n];
+        yA[0]=a-a*a;
+        yA[1]=1-2*a;
+        double* ya=yA;
+        double b=6.5;
+        double h=0.01;
+        double acc=0.05;
+        double eps=0.05;
+        gsl_vector* res=gsl_vector_alloc(n);
+        driverg(&g,n,a,ya,b,h,acc,eps,name,res,E);
+        gsl_vector_set(fx,0,gsl_vector_get(res,0));
+        gsl_vector_free(res);
+}
+
+void func65newton(gsl_vector* x,gsl_vector* fx){
+        char name[80]="out.Psitest.txt";
+
+        double E=gsl_vector_get(x,0);
+        int n=2;
+        double a=1.0/1000;
+        double yA[n];
+        yA[0]=a-a*a;
+        yA[1]=1-2*a;
+        double* ya=yA;
+        double b=6.5;
+        double h=0.01;
+        double acc=0.05;
+        double eps=0.05;
+        gsl_vector* res=gsl_vector_alloc(n);
+        driverg(&g,n,a,ya,b,h,acc,eps,name,res,E);
+        gsl_vector_set(fx,0,gsl_vector_get(res,0));
+        gsl_vector_free(res);
+}
+
+for (int i=0;i<dim;i++){
+        gsl_vector_set(E,i,-0.6);
+}
+
+
+
+
+printf("running algoritm f(x)=0 for x=6.5\n");
+
+Newton(func65newton,E,eps);
+printf("found root::\n");
+vector_print(E);
+printf("The analytical result is -0.5\n");
+func65print(E,Psib);
+printf("function value of root:\n");
+vector_print(Psib);
+
+void func65print2(gsl_vector* x,gsl_vector* fx){
+
+        char name[80]="out.Psi65_2.txt";
+
+        double E=gsl_vector_get(x,0);
+        int n=2;
+        double a=1.0/1000;
+        double yA[n];
+        yA[0]=a-a*a;
+        yA[1]=1-2*a;
+        double* ya=yA;
+        double b=6.5;
+        double h=0.01;
+        double acc=0.05;
+        double eps=0.05;
+        gsl_vector* res=gsl_vector_alloc(n);
+        driverg(&g,n,a,ya,b,h,acc,eps,name,res,E);
+	double bound_value=b*exp(-b);
+        gsl_vector_set(fx,0,gsl_vector_get(res,0)-bound_value);
+        gsl_vector_free(res);
+}
+
+void func65newton2(gsl_vector* x,gsl_vector* fx){
+        char name[80]="out.Psitest.txt";
+
+        double E=gsl_vector_get(x,0);
+        int n=2;
+        double a=1.0/1000;
+        double yA[n];
+        yA[0]=a-a*a;
+        yA[1]=1-2*a;
+        double* ya=yA;
+        double b=6.5;
+        double h=0.01;
+        double acc=0.05;
+        double eps=0.05;
+        gsl_vector* res=gsl_vector_alloc(n);
+        driverg(&g,n,a,ya,b,h,acc,eps,name,res,E);
+	double bound_value=b*exp(-b);
+        gsl_vector_set(fx,0,gsl_vector_get(res,0)-bound_value);
+        gsl_vector_free(res);
+}
+
+void func5print2(gsl_vector* x,gsl_vector* fx){
+
+        char name[80]="out.Psi5_2.txt";
+
+        double E=gsl_vector_get(x,0);
+        int n=2;
+        double a=1.0/1000;
+        double yA[n];
+        yA[0]=a-a*a;
+        yA[1]=1-2*a;
+        double* ya=yA;
+        double b=5;
+        double h=0.01;
+        double acc=0.05;
+        double eps=0.05;
+        gsl_vector* res=gsl_vector_alloc(n);
+        driverg(&g,n,a,ya,b,h,acc,eps,name,res,E);
+        double bound_value=b*exp(-b);
+        gsl_vector_set(fx,0,gsl_vector_get(res,0)-bound_value);
+        gsl_vector_free(res);
+}
+
+void func5newton2(gsl_vector* x,gsl_vector* fx){
+        char name[80]="out.Psitest.txt";
+
+        double E=gsl_vector_get(x,0);
+        int n=2;
+        double a=1.0/1000;
+        double yA[n];
+        yA[0]=a-a*a;
+        yA[1]=1-2*a;
+        double* ya=yA;
+        double b=5;
+        double h=0.01;
+        double acc=0.05;
+        double eps=0.05;
+        gsl_vector* res=gsl_vector_alloc(n);
+        driverg(&g,n,a,ya,b,h,acc,eps,name,res,E);
+        double bound_value=b*exp(-b);
+        gsl_vector_set(fx,0,gsl_vector_get(res,0)-bound_value);
+        gsl_vector_free(res);
+}
+
+void func8print2(gsl_vector* x,gsl_vector* fx){
+
+        char name[80]="out.Psi8_2.txt";
+
+        double E=gsl_vector_get(x,0);
+        int n=2;
+        double a=1.0/1000;
+        double yA[n];
+        yA[0]=a-a*a;
+        yA[1]=1-2*a;
+        double* ya=yA;
+        double b=8;
+        double h=0.01;
+        double acc=0.05;
+        double eps=0.05;
+        gsl_vector* res=gsl_vector_alloc(n);
+        driverg(&g,n,a,ya,b,h,acc,eps,name,res,E);
+        double bound_value=b*exp(-b);
+        gsl_vector_set(fx,0,gsl_vector_get(res,0)-bound_value);
+        gsl_vector_free(res);
+}
+
+void func8newton2(gsl_vector* x,gsl_vector* fx){
+        char name[80]="out.Psitest.txt";
+
+        double E=gsl_vector_get(x,0);
+        int n=2;
+        double a=1.0/1000;
+        double yA[n];
+        yA[0]=a-a*a;
+        yA[1]=1-2*a;
+        double* ya=yA;
+        double b=8;
+        double h=0.01;
+        double acc=0.05;
+        double eps=0.05;
+        gsl_vector* res=gsl_vector_alloc(n);
+        driverg(&g,n,a,ya,b,h,acc,eps,name,res,E);
+        double bound_value=b*exp(-b);
+        gsl_vector_set(fx,0,gsl_vector_get(res,0)-bound_value);
+        gsl_vector_free(res);
+}
+
+printf("Now with the better boundary condition:\n");
+
+for (int i=0;i<dim;i++){
+        gsl_vector_set(E,i,-0.6);
+}
+
+
+
+
+printf("running algoritm f(x)=x*exp(-x) for x=5\n");
+
+Newton(func5newton2,E,eps);
+printf("found root::\n");
+vector_print(E);
+printf("The analytical result is -0.5\n");
+func5print2(E,Psib);
+printf("diference between function value and x*exp(-x) at integration end:\n");
+vector_print(Psib);
+
+for (int i=0;i<dim;i++){
+        gsl_vector_set(E,i,-0.6);
+}
+
+
+
+
+printf("running algoritm f(x)=x*exp(-x) for x=6.5\n");
+
+Newton(func65newton2,E,eps);
+printf("found root::\n");
+vector_print(E);
+printf("The analytical result is -0.5\n");
+func65print2(E,Psib);
+printf("diference between function value and x*exp(-x) at integration end:\n");
+vector_print(Psib);
+
+printf("running algoritm f(x)=x*exp(-x) for x=8\n");
+
+Newton(func8newton2,E,eps);
+printf("found root::\n");
+vector_print(E);
+printf("The analytical result is -0.5\n");
+func8print2(E,Psib);
+printf("diference between function value and x*exp(-x) at integration end:\n");
+vector_print(Psib);
+
+
 
 
 
@@ -239,3 +550,4 @@ gsl_vector_free(fX);
 gsl_vector_free(X);
 return 0;
 }
+

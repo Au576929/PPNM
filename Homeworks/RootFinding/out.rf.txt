@@ -93,10 +93,54 @@ gives func value:
 
 running algoritm 
 found root::
-  -0.50077
+  -0.50078
 
 The analytical result is -0.5
 function value of root:
-3.92558e-08
+0.000806316
 
-used tolerance:   0.000100
+used tolerance:   0.010000
+Testing for different endvalues for the =0 boundary condition, above the function was set to zero at x=8
+same initial coniditions, tolerance etc. is used:
+f(x)=0 for x=5
+running algoritm 
+found root::
+ -0.497378
+
+The analytical result is -0.5
+function value of root:
+0.00202556
+
+running algoritm f(x)=0 for x=6.5
+found root::
+ -0.500479
+
+The analytical result is -0.5
+function value of root:
+8.29899e-05
+
+Now with the better boundary condition:
+running algoritm f(x)=x*exp(-x) for x=5
+found root::
+ -0.501352
+
+The analytical result is -0.5
+diference between function value and x*exp(-x) at integration end:
+  0.002835
+
+running algoritm f(x)=x*exp(-x) for x=6.5
+found root::
+ -0.500853
+
+The analytical result is -0.5
+diference between function value and x*exp(-x) at integration end:
+9.24826e-05
+
+running algoritm f(x)=x*exp(-x) for x=8
+found root::
+ -0.500803
+
+The analytical result is -0.5
+diference between function value and x*exp(-x) at integration end:
+9.82988e-07
+
