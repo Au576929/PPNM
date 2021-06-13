@@ -14,7 +14,7 @@ double dx=sqrt(3e-16); //close enough to machine epsilon
 
 int dim = X->size;
 double lambda=1;
-double lambda_min=dx;
+double lambda_min=0.00001;
 int counter=0;
 
 gsl_vector* fdX=gsl_vector_alloc(dim);
@@ -31,6 +31,7 @@ for (int i=0;i<dim;i++){
 do{
 	counter++;
 	assert(counter<10000);
+	lambda=1;
 	f(X,fX);
 	gsl_blas_dscal(0,dX);
 	gsl_vector_set(dX,0,dx);
@@ -63,7 +64,7 @@ do{
 	while(gsl_blas_dnrm2(fdX)>(1-lambda/2)*gsl_blas_dnrm2(fX) && lambda>lambda_min){
 		lambda/=2;
 	}
-
+	
 	gsl_blas_daxpy(lambda,dX,X);
 	f(X,fX);
 

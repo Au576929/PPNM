@@ -19,32 +19,33 @@ void func1(gsl_vector* X, gsl_vector* fX){
 }
 
 
-int dim=2;
+int dim=1;
 printf("Starting with the %i dimensional identity function:\n",dim);
 
-gsl_vector* X=gsl_vector_alloc(dim);
-gsl_vector* fX=gsl_vector_alloc(dim);
+gsl_vector* X1=gsl_vector_alloc(dim);
+gsl_vector* fX1=gsl_vector_alloc(dim);
 for (int i=0;i<dim;i++){
-	gsl_vector_set(X,i,rand_r(&rand_seed)*1.0/RAND_MAX*15);
+	gsl_vector_set(X1,i,rand_r(&rand_seed)*1.0/RAND_MAX*15);
 }
 
 
 
 
 printf("Start point:\n");
-vector_print(X);
+vector_print(X1);
 printf("gives func value:\n");
-func1(X,fX);
-vector_print(fX);
+func1(X1,fX1);
+vector_print(fX1);
 
 double eps=0.00005;
 printf("running algoritm \n");
-Newton(func1,X,eps);
+Newton(func1,X1,eps);
+
 printf("found root::\n");
-vector_print(X);
-func1(X,fX);
+vector_print(X1);
+func1(X1,fX1);
 printf("function value of root:\n");
-vector_print(fX);
+vector_print(fX1);
 
 
 printf("used tolerance: %10f\n",eps);
@@ -58,7 +59,12 @@ void func2(gsl_vector* X, gsl_vector* fX){
         gsl_vector_set(fX,1,50*cos(x0)*sin(x0));
 }
 
+dim=2;
 printf("\n\n now onto the %i dimensional function:\n f(x,y)=(f1,f2)    f1=50*sin(x)*cos(y)    f2=50*cos(y)*sin(x)\n",dim);
+
+gsl_vector* X=gsl_vector_alloc(dim);
+gsl_vector* fX=gsl_vector_alloc(dim);
+
 
 for (int i=0;i<dim;i++){
         gsl_vector_set(X,i,rand_r(&rand_seed)*1.0/RAND_MAX*0.5);

@@ -18,7 +18,7 @@ double p[]={-1};
 int dim=sizeof(p)/sizeof(p[0]);
 printf("Main: checking func1: %f\n",func1(dim,p));
 
-printf("integral of exp(-x) from 0 to 5, with 10000 points:");
+printf("integral of exp(-x) from 0 to 5, with 10000 points:\n");
 double a[]={0.0};
 double b[]={5.0};
 int N=10000;
@@ -29,7 +29,7 @@ printf("Main: plainmc not called. res=%f\n",res);
 plainmc(dim,func1,a,b,N,&res,&err);
 printf("Main: plainmc called. \n res=%f\nerr=%f\nactual result: 0.99326\n",res,err);
 
-printf("integral of cos(x)*cos(y) from 0 to 3.14159265 in both x and y, with 25000 points:");
+printf("integral of cos(x)*cos(y) from 0 to 3.14159265 in both x and y, with 25000 points:\n");
 
 
 double func2(int dim, double* p){
@@ -49,7 +49,7 @@ plainmc(dim,func2,a2,b2,N,&res,&err);
 printf("Main: plainmc called. \n res=%f\nerr=%f\nactual result: 0\n",res,err);
 
 
-printf("integral of 1/(1-cos(x)*cos(y)*cos(z)) from 0 to 3.14159265 in both x, y and z, with 100000 points:");
+printf("integral of 1/(1-cos(x)*cos(y)*cos(z)) from 0 to 3.14159265 in both x, y and z, with 100000 points:\n");
 
 
 double func3(int dim, double* p){

@@ -7,9 +7,32 @@
 
 int main(){
 
+int n=2;
+double x0[n];
+x0[0]=0;
+x0[1]=1;
 
-int n=3;
-double a;
+
+void harm_osc (int dim, double t, double* x, double* dx){
+
+	dx[1]=-x[0];
+	dx[0]=x[1];
+
+}
+
+double a=0;
+double b=20;
+
+double acc=0.0005;
+double eps=0.00005;
+double h=0.333;
+
+char name_osc[80]="out.osc.txt";
+
+driverg(&harm_osc,n,a,x0,b,h,acc,eps,name_osc);
+
+n=3;
+
 double yA[n];
 int N=5.5e6;
 
@@ -19,11 +42,9 @@ yA[2]=5e5; //Removed
 yA[0]=N-yA[2]-yA[1]; //susceptible
 
 double* ya=yA;
-double b=100; //days simulated
+b=100; //days simulated
 
-double h=0.333;
-double acc=0.0005;
-double eps=0.00005;
+h=0.333;
 double Tr=10;
 char pre_name[20]="out.Tc";
 char post_name[20]=".txt";

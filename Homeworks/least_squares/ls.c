@@ -98,7 +98,7 @@ gsl_matrix* Covy=gsl_matrix_alloc(Nf,Nf);
 
 
 fit(data,&func,Nf,c,Covy);
-printf("Covy=\n");
+printf("Covariance matrix=\n");
 matrixprint(Covy);
 
 printf("C=\n");

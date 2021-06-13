@@ -65,7 +65,7 @@ Thus QR decomposition seems to work on tall matricies.
         20    -3e+02
 
 
-Covy=
+Covariance matrix=
    0.00089   8.8e-05
    8.7e-05   1.3e-05
 

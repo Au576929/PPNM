@@ -1,20 +1,16 @@
-Starting with the 2 dimensional identity function:
+Starting with the 1 dimensional identity function:
 Start point:
     9.9898
-  0.879925
 
 gives func value:
     9.9898
-  0.879925
 
 running algoritm 
 found root::
 -2.19704e-07
--2.43138e-09
 
 function value of root:
 -2.19704e-07
--2.43138e-09
 
 used tolerance:   0.000050
 
@@ -22,21 +18,21 @@ used tolerance:   0.000050
  now onto the 2 dimensional function:
  f(x,y)=(f1,f2)    f1=50*sin(x)*cos(y)    f2=50*cos(y)*sin(x)
 Start point:
+ 0.0293308
  0.0188427
-  0.386501
 
 gives func value:
-  0.872584
-   0.94191
+   1.46607
+    1.4657
 
 running algoritm 
 found root:
-9.45924e-16
-  0.385628
+ 5.093e-14
+-0.0268744
 
 function value of root:
-4.38229e-14
-4.72962e-14
+2.54558e-12
+2.5465e-12
 
 used tolerance:   0.000050
 
@@ -44,33 +40,33 @@ used tolerance:   0.000050
  now onto the 2 dimensional function:
  f(x,y)=(f1,f2)    f1=sin(cos(x)+sin(y))    f2=cos(sin(x)+cos(y))
 Start point:
+   7.73001
    7.79919
-   4.29827
 
 gives func value:
- -0.758306
-  0.827522
+  0.901035
+  0.500095
 
 running algoritm 
 found root::
-   7.18651
-   5.61568
+   8.52144
+   6.95064
 
 function value of root:
--2.88915e-05
-3.80235e-05
+1.84949e-07
+2.5339e-07
 
 used tolerance:   0.000050
 
 
  now onto the gradient of the Rosenbrock's valley function
 Start point:
+   1.00043
    1.00097
-   1.00029
 
 gives func value:
-  0.658765
- -0.328099
+ -0.041826
+ 0.0213337
 
 running algoritm 
 found root::
@@ -78,8 +74,8 @@ found root::
          1
 
 function value of root:
-1.69864e-12
--3.55271e-13
+3.41761e-08
+-1.75143e-08
 
 used tolerance:   0.000005
 

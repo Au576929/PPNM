@@ -1,0 +1,66 @@
+Function to be minimized: f(x)=x²
+
+starting x=  3.000000
+Gives: f(x)=  9.000000
+minimization done:
+ x= -0.000000
+gives: f(x)=  0.000000
+
+
+Function to be minimized: f(x)=(1-x)²+100(y-x²)²
+
+starting x= 11.000000
+            11.000000
+Gives: f(x)=1210100.000000
+minimization done:
+ x= 18.945588
+   358.928699
+gives: f(x)=322.048455
+
+
+Function to be minimized: f(x)=(x²+y-11)²+(x+y²-7)²
+
+starting x=  3.500000
+             2.900000
+Gives: f(x)= 41.330600
+minimization done:
+ x=  3.000022
+     1.999818
+gives: f(x)=  0.000000
+
+
+Function to be minimized: f(x)=Deviation function for ex b
+
+starting x=1000.000000
+             1.000000
+             0.100000
+Gives: f(x)= 26.142979
+minimization done:
+ x=453.387252
+   125.675186
+    52.371035
+gives: f(x)= 24.671154
+
+
+
+
+
+SIMPLEX METHOD FROM HERE ON OUT:
+Function used: (1-x)²+100(y-x²)²
+Simplex before minimization:
+  3.329933    0.188427    3.899596  
+  0.293308    3.865007    2.149136  
+
+
+Function values before minimization:
+11658.944893  1467.167794  17058.800909  
+
+number of iterations used for minimization=95
+Simplex after minimization:
+  0.998147    0.995343    1.000016  
+  0.996558    0.990280    0.999498  
+
+
+Function values after minimization:
+  0.000010    0.000040    0.000029  
+
