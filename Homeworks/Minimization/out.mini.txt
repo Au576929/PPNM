@@ -4,6 +4,7 @@ starting x=  3.000000
 Gives: f(x)=  9.000000
 minimization done:
  x= -0.000000
+Accomplished in 2 steps
 gives: f(x)=  0.000000
 
 
@@ -15,6 +16,7 @@ Gives: f(x)=1210100.000000
 minimization done:
  x= 18.945588
    358.928699
+Accomplished in 10000 steps
 gives: f(x)=322.048455
 
 
@@ -26,22 +28,27 @@ Gives: f(x)= 41.330600
 minimization done:
  x=  3.000022
      1.999818
+Accomplished in 69 steps
 gives: f(x)=  0.000000
 
 
 Function to be minimized: f(x)=Deviation function for ex b
 
-starting x=1000.000000
-             1.000000
-             0.100000
-Gives: f(x)= 26.142979
+starting x=  1.000000
+           130.000000
+             0.003000
+Gives: f(x)= 25.139284
 minimization done:
- x=453.387252
-   125.675186
-    52.371035
-gives: f(x)= 24.671154
+ x=  9.749999
+   125.971452
+    -2.061322
+Accomplished in 4787 steps
+gives: f(x)=  7.882062
 
 
+resultant mass: 125.971452 GeV
+ According to wikipedia: m=125.1 GeV
+ resultant width: 2.061322
 
 
 

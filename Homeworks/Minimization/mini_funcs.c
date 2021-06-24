@@ -38,7 +38,7 @@ for (int i=0;i<n;i++){
 
 
 
-void minimize(double f(gsl_vector* X), gsl_vector* X, double acc){
+int minimize(double f(gsl_vector* X), gsl_vector* X, double acc){
 
 int dim = X->size;
 int nsteps=0;
@@ -87,7 +87,7 @@ while (nsteps<10000){
 		lambda/=2;
 		gsl_vector_scale(dX,0.5);
 	}
-
+	
 	gradient(f,XpdX,dXpdX);
 	gsl_vector_memcpy(Y,dXpdX);
 	gsl_blas_daxpy(-1,dF,Y);
@@ -109,12 +109,6 @@ while (nsteps<10000){
 }
 
 
-
-
-
-
-
-
 gsl_matrix_free(B);
 gsl_vector_free(dF);
 gsl_vector_free(dX);
@@ -123,6 +117,7 @@ gsl_vector_free(dXpdX);
 gsl_vector_free(Y);
 gsl_vector_free(U);
 gsl_vector_free(A);
+return nsteps;
 }
 
 

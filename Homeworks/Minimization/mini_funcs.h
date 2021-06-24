@@ -1,6 +1,6 @@
 void gradient(double (gsl_vector*),gsl_vector*, gsl_vector*);
 
-void minimize(double (gsl_vector*), gsl_vector*,double);
+int minimize(double (gsl_vector*), gsl_vector*,double);
 
 int simplex_ringdown(double f(gsl_vector*),gsl_matrix* simplex,double simplex_size_goal);
 

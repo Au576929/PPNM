@@ -22,13 +22,15 @@ void task_doer(double func(gsl_vector* x),gsl_vector* x,double eps,char* func_de
         }
 	printf("Gives: f(x)=%10f\n",func(x));
 
-
-	minimize(func,x,eps);
+	
+	int steps=minimize(func,x,eps);
 	printf("minimization done:\n x=%10f\n",gsl_vector_get(x,0));
 	for (int i =1;i<dim;i++){
 		printf("   %10f\n",gsl_vector_get(x,i));
 	}
+	printf("Accomplished in %i steps\n",steps);
 	printf("gives: f(x)=%10f",func(x));
+	//rintf("done in %i steps\n",*steps);
 	printf("\n\n\n");
 }
 
@@ -88,8 +90,8 @@ task_doer(func3,x3,eps3,func_description3);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         double breit_wigner(double E,gsl_vector* X){
                 double A=gsl_vector_get(X,0);
-                double m=gsl_vector_get(X,1);
-                double Gamma=gsl_vector_get(X,2);
+                double m=fabs(gsl_vector_get(X,1));
+                double Gamma=fabs(gsl_vector_get(X,2));
 
                 return A/((E-m)*(E-m)+Gamma*Gamma/4.0);
         }
@@ -115,14 +117,14 @@ double func4(gsl_vector* X){
 	
 	int dim4=3;
 	gsl_vector* x4=gsl_vector_alloc(dim4);
-	gsl_vector_set(x4,0,1e3);
-	gsl_vector_set(x4,1,1);
-	gsl_vector_set(x4,2,1e-1);
+	gsl_vector_set(x4,0,1);
+	gsl_vector_set(x4,1,130);
+	gsl_vector_set(x4,2,0.003);
 	double eps4=1e-10;
 
 	char func_description4[50]="Deviation function for ex b";
 	task_doer(func4,x4,eps4,func_description4);
-
+	printf("resultant mass: %f GeV\n According to wikipedia: m=125.1 GeV\n resultant width: %f\n",fabs(gsl_vector_get(x4,1)),fabs(gsl_vector_get(x4,2)));
 	FILE* stream=fopen("out.bwfit.txt","w");
 	double bw;
 	for(int i=0;i<60*10;i++){

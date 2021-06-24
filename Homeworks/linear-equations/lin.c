@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
-#include <gsl/gsl_linalg.h>
+
 
 
 #include "lin_funcs.h"

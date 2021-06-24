@@ -26,7 +26,7 @@ Exc.B.png: data.txt out.bwfit.txt Makefile
 	set ylabel "Cross section [arb. unit]";\
 	set key top;\
 	set xrange [100:160];\
-	set yrange [-3:5];\
+	set yrange [-3:10];\
 	plot "$<" using 1:2:3 w yerr title "data"\
 	, "out.bwfit.txt" using 1:2 w l title "fit";\
 	' | gnuplot 
