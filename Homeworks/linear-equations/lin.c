@@ -149,12 +149,22 @@ for(int j=0; j<n;j++){
 }
 
 
-printf("\n\n\n\n\n\n\n Inverse matrix production:\n");
+printf("\n\n\n\n\n\n\n Inverse matrix production:\nThe same square A matrix used above is used here.\n");
 
 gsl_matrix* Ai=gsl_matrix_alloc(n,n);
 gsl_matrix* ident=gsl_matrix_alloc(n,n);
 
 invert(As,Rs,Ai);
+
+printf("The inverse matrix:\n");
+for (int i =0; i<n;i++){
+	for(int j=0; j<n;j++){
+		printf("%10g   ",gsl_matrix_get(Ai,i,j));
+	}
+	printf("\n");
+}
+
+
 
 printf("checking that A^-1*A=I\n A^-1*A=\n ");
 

@@ -1,0 +1,110 @@
+integral of sqrt(x) from 0 to 1
+Nummerical result=0.666681 
+ Analytical result 2/3 
+Function called 40 times
+Integration error 0.000072
+The error estimate is somewhat pessimistic by the nature of the calculation method, this goes for the entire work.
+
+
+
+integral of 4*sqrt(1-x²) from 0 to 1
+Nummerical result=3.141593 
+ Analytical result pi 
+Function called 9596 times
+Integration error 0.000000
+
+
+
+integral of 1/sqrt(x) from 0 to 1:
+ Without Clenshaw-Curtis trnaformation:
+Nummerical result=1.999997 
+ Analytical result 2 
+Function called 17140 times
+Integration error 0.000077
+
+
+ With the Clenshaw-Curtis transformation:
+Nummerical result=2.000000 
+ Analytical result 2 
+Function called 52 times
+Integration error 0.000069
+
+
+
+integral of log(x)/sqrt(x) from 0 to 1:
+ Without Clenshaw-Curtis trnaformation:
+Nummerical result=-3.999998 
+ Analytical result -4 
+Function called 29972 times
+Integration error 0.000081
+
+
+ With the Clenshaw-Curtis transformation:
+Nummerical result=-3.999998 
+ Analytical result -4 
+Function called 272 times
+Integration error 0.000087
+The final integral of part B (without transform) is the same as te final one in part A...
+
+ integral of 4*sqrt(1-x*x) from 0 to 1 with the Clenshaw-Curtis transformation:
+Nummerical result=3.14159 
+ Analytical result 3.14159265358979324 
+Function called 14016 times
+Integration error 0.000000
+with gsl's gsl_integration_qags method:
+with gsl method res= 3.14159
+ with error 3.53356e-10
+ function called 231 times
+
+
+ integral of exp(-x) from 0 to infty:
+Nummerical result=1.000007 
+ Analytical result 1 
+Function called 68 times
+Integration error 0.000084
+
+
+ integral of exp(-x²) from -infty to infty:
+Nummerical result=1.772454 
+ Analytical result sqrt(pi)=1.7724538509 
+Function called 432 times
+Integration error 0.000006
+
+
+ integral of exp(-x²) from -infty to 0:
+Nummerical result=0.886212 
+ Analytical result sqrt(pi)/2=0.886226925 
+Function called 180 times
+Integration error 0.000007
+
+
+From here on gsl routines are used!
+
+
+
+ integral of exp(-x²) from -5 to 5:
+Nummerical result=1.772454 
+ Wolfram alpha result 1.77245
+Function called 63 times
+Integration error 0.000002
+
+
+ integral of exp(-x²) from -Infinity to 5:
+Nummerical result=1.772454 
+ Wolfram alpha result 1.77245
+Function called 165 times
+Integration error 0.000086
+
+
+ integral of exp(-x²) from -5 to infinity:
+Nummerical result=1.772454 
+ Wolfram alpha result 1.77245
+Function called 165 times
+Integration error 0.000086
+
+
+ integral of exp(-x²) from -infinity to infinity:
+Nummerical result=1.772454 
+ Wolfram alpha result 1.77245
+Function called 150 times
+Integration error 0.000004

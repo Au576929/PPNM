@@ -68,6 +68,12 @@ Checking that Ax=b
 
 
  Inverse matrix production:
+The same square A matrix used above is used here.
+The inverse matrix:
+    1.9037      1.20703     -2.55349    -0.226861   
+  -1.43094    -0.983657      1.32537      1.87339   
+  -1.87965      0.36916      1.99689    -0.323289   
+   1.46704    -0.175171    -0.100176    -0.614009   
 checking that A^-1*A=I
  A^-1*A=
           1   -2.30371e-15   -3.51108e-15   -2.15106e-15   

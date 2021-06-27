@@ -1,0 +1,73 @@
+Function to be minimized: f(x)=x²
+
+starting x=  3.000000
+Gives: f(x)=  9.000000
+minimization done:
+ x= -0.000000
+Accomplished in 2 steps
+gives: f(x)=  0.000000
+
+
+Function to be minimized: f(x)=(1-x)²+100(y-x²)²
+
+starting x=  5.000000
+             5.000000
+Gives: f(x)=40016.000000
+minimization done:
+ x=  1.002837
+     1.009232
+Accomplished in 10000 steps
+gives: f(x)=  0.001268
+
+
+Function to be minimized: f(x)=(x²+y-11)²+(x+y²-7)²
+
+starting x=  3.500000
+             2.900000
+Gives: f(x)= 41.330600
+minimization done:
+ x=  3.000022
+     1.999818
+Accomplished in 69 steps
+gives: f(x)=  0.000000
+
+
+Function to be minimized: f(x)=Deviation function for ex b
+
+starting x=  1.000000
+           130.000000
+             0.003000
+Gives: f(x)= 25.139284
+minimization done:
+ x=  9.749999
+   125.971452
+    -2.061322
+Accomplished in 4787 steps
+gives: f(x)=  7.882062
+
+
+resultant mass: 125.971452 GeV
+ According to wikipedia: m=125.1 GeV
+ resultant width: 2.061322
+
+
+
+SIMPLEX METHOD FROM HERE ON OUT:
+Function used: (1-x)²+100(y-x²)²
+Simplex before minimization:
+  3.329933    0.188427    3.899596  
+  0.293308    3.865007    2.149136  
+
+
+Function values before minimization:
+11658.944893  1467.167794  17058.800909  
+
+number of iterations used for minimization=95
+Simplex after minimization:
+  0.998147    0.995343    1.000016  
+  0.996558    0.990280    0.999498  
+
+
+Function values after minimization:
+  0.000010    0.000040    0.000029  
+
