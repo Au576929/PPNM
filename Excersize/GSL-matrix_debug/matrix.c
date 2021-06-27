@@ -16,6 +16,16 @@ void vector_print(char s[], gsl_vector* v){
 	printf("\n");
 }
 
+void matrix_print(gsl_matrix* A){
+for (int i=0; i<A->size1;i++){
+	for (int j=0;j<A->size2;j++){
+		printf("%10g  ",gsl_matrix_get(A,i,j));
+	}
+	printf("\n");
+}
+printf("\n");
+}
+
 int main(){
 	int n=3;
 TRACE("n=%i\n",n);
@@ -36,6 +46,8 @@ TRACE("2\n");
 		gsl_matrix_set(A,2,1,1.00);
 		gsl_matrix_set(A,2,2,0.19);
 TRACE("3\n");
+		printf("A - matrix:\n");
+		matrix_print(A);
 		gsl_matrix_memcpy(Acopy,A);
 TRACE("4\n");
 		gsl_vector_set(b,0,6.23);

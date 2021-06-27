@@ -78,6 +78,12 @@ double quadspline_integ(quadspline *s, double input){
 return output;
 }
 
+double quadspline_deriv(quadspline* s, double input){
+	int i = binsearch(s->n,s->x,input);
+	double output=s->b[i]+2*(input-s->x[i])*s->c[i];
+	return output;
+}
+
 
 void quadspline_free(quadspline *s){
 	free(s->x);
@@ -95,32 +101,31 @@ int main(){
 
 int n=20;
 
-double x[n],y[n];
+double x[n],y[n],dy[n];
 
 FILE* my_out_stream=fopen("out.xydata.txt","w");
-
+FILE* out_deriv_exact = fopen("out.deriv.exact.txt","w");
 for(int i=0;i<n;i++){
 x[i]=i/2.0;
 y[i]=sin(x[i]);
-//y[i]=i*i;
+dy[i]=cos(x[i]);
 fprintf(my_out_stream,"%10g %10g \n",x[i],y[i]);
+fprintf(out_deriv_exact,"%10g %10g\n",x[i],dy[i]);
 }
 
 quadspline* s = quadspline_alloc(n,x,y);
 
 FILE* out_quad_integ = fopen("out.quad.integ.txt","w");
-
+FILE* out_quad_deriv = fopen("out.quad.deriv.txt","w");
 int z=0;
 double fineness=10;
 
 while(z<=fineness*s->x[n-1]){
 printf("%10g	%10g\n",z/fineness,quadspline_eval(s,z/fineness));
 fprintf(out_quad_integ,"%10g %10g\n",z/fineness,quadspline_integ(s,z/fineness));
+fprintf(out_quad_deriv,"%10g %10g\n",z/fineness,quadspline_deriv(s,z/fineness));
 z++;
 }
-
-
-
 
 
 quadspline_free(s);

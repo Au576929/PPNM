@@ -4,7 +4,7 @@ CFLAGS += $(shell gsl-config --cflags)
 LDLIBS = -lm 
 LDLIBS += $(shell gsl-config --libs)
 
-default: out.lin.txt out.quad.txt out.cube.txt out.gsl.lin.txt interp.png integ.png integ.quad.png integ.cubic.png 
+default: out.lin.txt out.quad.txt out.cube.txt out.gsl.lin.txt interp.png integ.png integ.quad.png integ.cubic.png deriv.png
 
 out.lin.txt: lin
 	./$< > $@
@@ -18,6 +18,9 @@ out.quad.txt: quad
 
 out.cube.txt: cube
 	./$< > $@
+
+out.deriv.exact.txt: quad
+out.cubic.deriv.txt: cube
 
 interp.png: out.lin.txt out.quad.txt out.cube.txt out.xydata.txt out.gsl.lin.txt out.gsl.pol.txt Makefile 
 	echo '\
@@ -41,7 +44,7 @@ integ.png: out.xyinteg.txt out.integ.exact.txt out.xyinteg.half.txt out.gsl.lin.
 	set terminal png;\
 	set output "$@";\
 	set xlabel "x";\
-	set ylabel "y";\
+	set ylabel "integral of y from 0 to x";\
 	set key bottom left;\
 	plot "$<" using 1:2 w l title "lin integ"\
 	,    "out.integ.exact.txt" using 1:2 w p title "analytical integral"\
@@ -60,6 +63,25 @@ integ.quad.png: out.quad.integ.txt out.integ.exact.txt Makefile
 	plot "$<" using 1:2 w l title "quad integ"\
 	,    "out.integ.exact.txt" using 1:2 w p title "analytical integral"\
 	' | gnuplot 
+
+
+
+
+
+deriv.png: out.quad.deriv.txt out.cubic.deriv.txt out.deriv.exact.txt Makefile 
+	echo '\
+	set terminal png;\
+	set output "$@";\
+	set xlabel "x";\
+	set ylabel "dydx";\
+	set key bottom left;\
+	plot "$<" using 1:2 w l title "quad deriv"\
+	,    "out.deriv.exact.txt" using 1:2 w p title "analytical integral"\
+	,    "out.cubic.deriv.txt" using 1:2 w l title "cube deriv";\
+	' | gnuplot 
+
+
+
 
 
 integ.cubic.png: out.cubic.integ.txt out.integ.exact.txt out.gsl.pol.integ.txt Makefile 

@@ -1,0 +1,5 @@
+Excersize A:
+Pi has been approximated using 3e8 points, split in 3 threads:
+pi is approx=3.14156
+
+

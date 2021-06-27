@@ -14,9 +14,12 @@ hello: hello.o
 hello.o: hello.c
 	$(CC) $(CFLAGS) -c hello.c
 
+.PHONEY: clean
 clean:
 	$(RM) hello.o hello out.txt
 
+
+.PHONEY: test
 test:
 	echo $(LDLIBS)
 	echo $(CC)

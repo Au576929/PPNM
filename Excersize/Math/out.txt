@@ -1,0 +1,15 @@
+Gamafunction of 5: 24.000000 
+ Besselfunction of 0.5: 0.242268 
+ The squareroot of -2 is: 0+1.41421I 
+exp(i*pi)=-1+1.22465e-16I
+exp(I)=0.540302+I0.841471
+I^e=-0.42822+-0.903675I
+I^I=0.20788+0I
+1/9 as float:0.1111111119389533996582031
+ Thus float are precise to 9 decimal places. 
+
+ 1/9 as double: 0.1111111111111111049432054 
+ Thus double are precise to 16 decimals.
+
+ 1/9 as long double: 0.1111111111111111111096053
+ Thus long doubles are precise to 19 decimals,

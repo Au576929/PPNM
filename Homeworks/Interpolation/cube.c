@@ -91,6 +91,12 @@ double cubicspline_integ(cubicspline *s, double input){
 return output;
 }
 
+double cubicspline_deriv(cubicspline *s,double input){
+	int i=binsearch(s->n,s->x,input);
+	double output=s->b[i]+(input-s->x[i])*(2*s->c[i]+3*(input-s->x[i])*s->d[i]);
+	return output;
+}
+
 
 
 void cubicspline_free(cubicspline *s){
@@ -125,7 +131,7 @@ cubicspline* s = cubicspline_alloc(n,x,y);
 
 
 FILE* out_cubic_integ = fopen("out.cubic.integ.txt","w");
-
+FILE* out_cubic_deriv = fopen("out.cubic.deriv.txt","w");
 
 int z=0;
 double fineness=10;
@@ -133,6 +139,7 @@ double fineness=10;
 while(z<=fineness*s->x[n-1]){
 	printf("%10g	%10g\n",z/fineness,cubicspline_eval(s,z/fineness));
 	fprintf(out_cubic_integ,"%10g %10g\n",z/fineness,cubicspline_integ(s,z/fineness));
+	fprintf(out_cubic_deriv,"%10g %10g\n",z/fineness,cubicspline_deriv(s,z/fineness));
 	z++;
 }
 

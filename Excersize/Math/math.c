@@ -35,7 +35,7 @@ float x_float=1.f/9;
 double x_double=1./9;
 long double x_long_double=1.L/9;
 
-printf("%.25g\n %.25lg \n %.25Lg",x_float,x_double,x_long_double);
+printf("1/9 as float:%.25g\n Thus float are precise to 9 decimal places. \n\n 1/9 as double: %.25lg \n Thus double are precise to 16 decimals.\n\n 1/9 as long double: %.25Lg\n Thus long doubles are precise to 19 decimals,\n",x_float,x_double,x_long_double);
 
 
 

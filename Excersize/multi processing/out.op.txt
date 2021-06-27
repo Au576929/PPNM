@@ -1,0 +1,68 @@
+For  1000 random points:
+pi is approx with omp =3.204
+Error is: -0.0624073
+
+For  2000 random points:
+pi is approx with omp =3.18
+Error is: -0.0384073
+
+For  4000 random points:
+pi is approx with omp =3.195
+Error is: -0.0534073
+
+For  8000 random points:
+pi is approx with omp =3.1605
+Error is: -0.0189073
+
+For  16000 random points:
+pi is approx with omp =3.12225
+Error is: 0.0193427
+
+For  32000 random points:
+pi is approx with omp =3.16538
+Error is: -0.0237823
+
+For  64000 random points:
+pi is approx with omp =3.15525
+Error is: -0.0136573
+
+For  128000 random points:
+pi is approx with omp =3.15394
+Error is: -0.0123448
+
+For  256000 random points:
+pi is approx with omp =3.14409
+Error is: -0.0025011
+
+For  512000 random points:
+pi is approx with omp =3.1422
+Error is: -0.000602659
+
+For  1024000 random points:
+pi is approx with omp =3.14346
+Error is: -0.00186828
+
+For  2048000 random points:
+pi is approx with omp =3.14395
+Error is: -0.00235461
+
+For  4096000 random points:
+pi is approx with omp =3.14371
+Error is: -0.00211731
+
+For  8192000 random points:
+pi is approx with omp =3.14162
+Error is: -2.55105e-05
+
+For  16384000 random points:
+pi is approx with omp =3.14221
+Error is: -0.00061804
+
+For  32768000 random points:
+pi is approx with omp =3.14254
+Error is: -0.000942503
+
+For  65536000 random points:
+pi is approx with omp =3.14212
+Error is: -0.000531248
+

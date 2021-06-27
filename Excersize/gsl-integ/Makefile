@@ -6,7 +6,7 @@ CC = gcc
 
 .Phoney: default
 default: out.mygslinteg.txt  out.myBessel.png  out.myerf.png
-
+	cat out.mygslinteg.txt
 
 out.myerf.png: out.Erf.txt Makefile
 	graph \

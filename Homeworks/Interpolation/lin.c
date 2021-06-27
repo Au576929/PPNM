@@ -107,9 +107,6 @@ z=0;
 
 while(z<=fineness*xt[n/2-1]){
 	fprintf(my_out_stream_integ_half,"%10g	%10g\n",z/fineness,lininterp_integ(n/2,xt,yt,z/fineness));
-	
-//	fprintf(my_out_stream_integ_half,"xt[0]=%10g  xt[n/2-1]=%10g z=%10g\n",xt[0],xt[n/2-1],z/fineness);
-
 	z++;
 }
 

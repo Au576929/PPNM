@@ -1,4 +1,3 @@
-CC = gcc
 CFLAGS = -std=gnu99 -O -Wall
 LDLIBS = -lm
 

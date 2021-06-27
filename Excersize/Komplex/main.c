@@ -1,5 +1,5 @@
 #include "komplex.h"
-#include<stdio.h>
+#include"stdio.h"
 #define TINY 1e-6
 
 int main(){

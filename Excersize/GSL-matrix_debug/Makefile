@@ -3,7 +3,7 @@ CFLAGS += $(shell /usr/bin/gsl-config --cflags)
 LDLIBS += $(shell /usr/bin/gsl-config --libs)
 
 .PHONEY:all
-all:out.txt
+all: out.txt
 	cat out.txt
 
 out.txt: matrix
