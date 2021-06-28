@@ -44,19 +44,15 @@ void driver (
         char* name
 ){
 // The idea is to describe the function input via a real variable t going from 0 to 1
-double complex xt(double complex a,double complex b,double t){
-return a+(b-a)*t;
-}
 
 
 double t=0;
-double complex x=xt(a,b,t);
+double complex x=a;
 assert(x==a);
 
 double complex* y=ya;
 
 double complex dhdt=b-a; //this is then what dt (the step) needs to be multiplied with to produce h from the real setup
-
 
 double s, normy, tol, err;
 double complex yh[n], dy[n];

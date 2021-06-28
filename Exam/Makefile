@@ -26,8 +26,8 @@ Harmonic_oscillator1.png: out.osc1.txt Makefile
 	echo '\
 	set terminal png;\
 	set output "$@";\
-	set xlabel "time";\
-	set ylabel "extension";\
+	set xlabel "x";\
+	set ylabel "y(x)";\
 	set title "Harmonic oscillator1";\
 	set key top;\
 	set xrange [0:20];\
@@ -46,8 +46,8 @@ Harmonic_oscillator2.png: out.osc2.txt Makefile
 	echo '\
 	set terminal png;\
 	set output "$@";\
-	set xlabel "time";\
-	set ylabel "extension";\
+	set xlabel "x";\
+	set ylabel "y(x)";\
 	set title "Harmonic oscillator2";\
 	set key top;\
 	set xrange [0:5];\
@@ -65,8 +65,8 @@ Harmonic_oscillator3.png: out.osc3.txt Makefile
 	echo '\
 	set terminal png;\
 	set output "$@";\
-	set xlabel "time";\
-	set ylabel "extension";\
+	set xlabel "x";\
+	set ylabel "y(x)";\
 	set title "Harmonic oscillator3";\
 	set key top;\
 	set xrange [0:5];\
